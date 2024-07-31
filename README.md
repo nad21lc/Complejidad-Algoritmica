@@ -59,8 +59,7 @@ Este repositorio está cerrado a contribuciones externas. Si tienes alguna suger
 
 ## Contacto
 
-Nadia Lucas Coronel  
-nad21lc@gmail.com
+Nadia Lucas Coronel | nad21lc@gmail.com
 
 ## Copyright
 
