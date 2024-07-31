@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #333366;
+    cursor: url('images/cursor1.png'), auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    padding: 10px;
+    z-index: 1000;
+    transition: 0.5s ease;
+    justify-content: space-around;
+    background-color: #333366;
+}
+
+.header-title {
+    display: flex;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    text-decoration: none;
+    margin-left: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    align-items: center;
+}
+
+.header-title span {
+    margin-left: 10px;
+}
+
+.header-title img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.header-nav {
+    display: flex;
+}
+
+.header-nav-link {
+    text-decoration: none;
+    margin: 20px;
+    color: #ffffff;
+    font-weight: bold;
+    width: 200px;
+}
+
+.header-nav-link:hover {
+    color: #42deb8;
+    transition: 0.5s ease;
+}
+
+.graph-section {
+    padding: 120px 10%;
+    
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #42deb8;
+}
+
+.graph-section img {
+    width: 100%;
+    max-width: 800px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.card h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}

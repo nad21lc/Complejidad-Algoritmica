@@ -1,0 +1,2 @@
+problemas while: https://while.schnabel.io/
+maquinas de turing: https://math.hws.edu/eck/js/turing-machine/TM.html

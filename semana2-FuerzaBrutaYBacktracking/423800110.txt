@@ -1,0 +1,12 @@
+def strmatch(cadena, subcad):
+  n = len(cadena)
+  m = len(subcad)
+  results = []
+  for i in range(n - m):
+    if subcad == cadena[i:i+m]:
+      results.append(i)
+
+  return results
+
+
+print(strmatch("abracadabracalamzoo", "rac"))

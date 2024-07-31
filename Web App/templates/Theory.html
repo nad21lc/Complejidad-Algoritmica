@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Optical Fiber For All</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <link rel="icon" type="image/x-icon" href="/static/images/logoFiber.ico">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <!--menu de navegación-->
+        <header class="header">
+            <div class="header-title">
+                <a href="#" class="logo">
+                    <img src="/static/images/image.png" alt="logo-Zyan">
+                    <span>Optical Fiber For All</span>
+                </a>
+        </div>
+            <nav class="header-nav">
+                <a class="header-nav-link" href="/Home">Inicio</a>
+                <a class="header-nav-link" href="/Theory">Teoría</a>
+                <a class="header-nav-link" href="/About-us">Sobre nosotras</a>
+            </nav>
+        </header>
+        <section class="description">
+            <div>
+                <h2>Descripción del problema</h2>
+                <p>
+                 Texas enfrenta una creciente necesidad de conectividad confiable y de alta velocidad tanto en áreas urbanas como rurales debido a la dependencia creciente de la tecnología digital en la educación, atención médica, trabajo remoto y otros aspectos de la vida cotidiana. 
+                 Un incidente reciente reveló la vulnerabilidad de la infraestructura de comunicaciones existente al experimentar una interrupción significativa en los servicios de Internet por fibra óptica de un proveedor líder, afectando a millones de usuarios. 
+                 Por lo tanto, se está desarrollando un proyecto para implementar una red de fibra óptica en Texas con el objetivo de ofrecer conectividad de alta velocidad y confiable a todos los ciudadanos del estado.
+                </p>
+                <img src="static/images/fiber.jpg" alt="fiber">
+            </div>
+            <div>
+                <h2>Dataset</h2>
+                <p>El dataset obtenido del Proyecto de Análisis de Redes de Stanford (SNAP) contiene información sobre todas las calles en el estado de Texas. En este conjunto de datos, los vértices representan las intersecciones y los extremos de las carreteras, mientras que las aristas representan las propias calles.
+                </p>
+                <img src="static/images/dataset_1.png" alt="dataset">
+                <br>
+                <p>
+                  A través de la Dataset recuperada en SNAP  se extrajo la siguiente muestra de más de 1500 nodos, que se obtuvo a través de un algoritmo de un formateo implementado.
+                </p>
+                <img src="static/images/muestra.png" alt="muestra">
+                <br>
+                <p>
+                  Este dataset ha sido formateado para representar una estructura de 'lista de adyacencia' en la que los vértices representan los puntos estratégicos donde se instalará fibra óptica, y las aristas representan las conexiones subterráneas de fibra óptica entre estos puntos estratégicos. Cada fila de la lista contiene dos elementos clave:
+                </p>
+                <ol class="numbered-list">
+                    <li>Nodo Destino: representa la siguiente intersección en la calle.</li>
+                    <li>Peso: Indica la distancia de un tramo de calle entre intersecciones continuas.</li>
+                </ol>
+            </div>
+            <div>
+                <h2>Interpretacion</h2>
+                <br>
+                <img src="static/images/interpretacion.png" alt="dataset_inter">
+            </div>  
+            <div>
+                <h2>Visualización completa</h2>
+                <img src="static/images/imagen_prueba_14.svg" alt="prueba">
+                <h2>Visualización Interactiva</h2>
+                <img src="static/images/image_interactiva.png" alt="interactivo">
+            </div>
+            <div>
+                <h2>Propuesta</h2>
+                <p>
+                 Objetivo: El objetivo fundamental de esta propuesta es proporcionar acceso a una red de fibra óptica de alta velocidad a todos los ciudadanos del estado de Texas, garantizando la conectividad confiable en áreas urbanas.
+                </p>
+                <p>
+                 Técnica: El algoritmo de Kruskal se utilizará como la técnica principal para diseñar e implementar la red de fibra óptica en Texas. Este algoritmo permitirá encontrar el árbol de expansión mínimo (Minimum Spanning Tree, MST) en el grafo ponderado que representa la infraestructura de la red. El MST generado por el algoritmo de Prim garantizará que la longitud total de la red sea mínima, optimizando así el costo y la eficiencia de la infraestructura.
+                </p>
+                <p>
+                  Metodología:  
+                    Se creará un grafo ponderado no dirigido y conexo que represente la infraestructura de conectividad en Texas. Los vértices del grafo representarán las ubicaciones clave, como ciudades y centros urbanos, y las aristas representarán los posibles enlaces de fibra óptica entre ellos.
+                    El algoritmo comenzará desde un vértice inicial (por ejemplo, la capital del estado) y seleccionará de manera iterativa las aristas de menor peso que aún no formen parte del MST.                    
+                </p>
+            </div>
+            <div>
+                <h2>Algoritmo de Kruskal</h2>
+                <p>
+                    El algoritmo de Kruskal es una forma de encontrar un árbol de expansión mínima en un grafo ponderado. Funciona de la siguiente manera:
+                </p>
+                <ol class="numbered-list">
+                    <li>Inicializa un grafo con todos los vértices y ninguna arista en el árbol mínimo.</li>
+                    <li>Ordena todas las aristas por peso de menor a mayor.</li>
+                    <li>Iterativamente, toma la arista más ligera y la agrega al árbol mínimo si no forma un ciclo con las aristas ya seleccionadas.</li>
+                    <li>Repite el paso 3 hasta que el árbol mínimo tenga V-1 aristas (donde V es el número de vértices del grafo).</li>
+                    <li>El árbol mínimo resultante es la solución óptima, que es un árbol acíclico que conecta todos los vértices con el peso total mínimo.</li>
+                </ol>
+                <br>
+                <p>El algoritmo de Kruskal es eficiente y se utiliza para resolver problemas de diseño de redes, rutas de transporte y más, donde se busca minimizar costos o distancias.</p>
+            </div>            
+        </section>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optical Fiber For All</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <link rel="icon" type="image/x-icon" href="/static/images/logoFiber.ico">
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-title">
+        <a href="#" class="logo">
+          <img src="/static/images/image.png" alt="logo-Optic">
+          <span>Optical Fiber For All</span>
+        </a>
+      </div>
+      <nav class="header-nav">
+        <a class="header-nav-link" href="/Home">Inicio</a>
+        <a class="header-nav-link" href="/Theory">Teoría</a>
+        <a class="header-nav-link" href="/About-us">Sobre nosotras</a>
+      </nav>
+    </header>
+    
+    <section class="custom-section">
+      <div class="left-section"> 
+          <div class="card">
+            <h2>Dataset</h2>
+            <form action="/generate_graph" method="post">
+              <input type="text" name="valorInput" class="input" placeholder="Ingrese un valor">
+              <button type="submit" class="button">Generar Grafo</button>
+              <input type="file" id="fileInput" style="display: none;">
+              <label class="button" for="fileInput">Buscar Dataset</label>
+            </form>
+          </div>
+          <div class="card">
+            <h2>Mostrar Grafo</h2>
+            <a href="{{ url_for('show_graph') }}" class="button">Mostrar Grafo</a>
+          </div>
+      </div>
+      <div class="right-section">
+          <div class="card hidden" id="new-card">
+            <h2>Nuevo Grafo</h2>
+            <img src="static/images/imagen_prueba_14.svg" alt="Grafo Image">
+          </div>
+          <div class="card">
+              <h2>Visualizar Arbol de Expansión Mínima - MST</h2>
+              <a href="{{ url_for('show_mst') }}" class="button">Mostrar MST clásico</a>
+              <a href="{{ url_for('show_mst_interactivo') }}" class="button">Mostrar MST Interactivo</a>
+          </div>
+      </div>
+    </section>  
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafo Interactivo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='interactive-graph.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-title">
+            <a href="#" class="logo">
+                <img src="/static/images/image.png" alt="logo-Optic">
+                <span>Optical Fiber For All</span>
+            </a>
+        </div>
+        <nav class="header-nav">
+            <a class="header-nav-link" href="/Home">Volver a Inicio</a>
+        </nav>
+    </header>
+
+    <section class="content-section">
+        <div class="card">
+            <h2>Visualización del Grafo</h2>
+            <div id="graph-container">
+                {{ graph_html | safe }}
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="card">
+            <h2>Datos del Grafo (JSON)</h2>
+            <pre>{{ graph_data_json }}</pre>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="card">
+            <h2>Grafo</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nodo</th>
+                        <th>Aristas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for node_info in graph_info %}
+                        <tr>
+                            <td>{{ node_info["node"] }}</td>
+                            <td>
+                                {% for edge in node_info["edges"] %}
+                                    {{ edge }}
+                                    {% if not loop.last %}, {% endif %}
+                                {% endfor %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+</html>

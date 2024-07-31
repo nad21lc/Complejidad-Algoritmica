@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='mst.css') }}">
+    <title>Graph with MST</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header-title">
+            <a href="#" class="logo">
+                <img src="/static/images/image.png" alt="logo-Optic">
+                <span>Optical Fiber For All</span>
+            </a>
+        </div>
+        <nav class="header-nav">
+            <a class="header-nav-link" href="/Home">Volver a Inicio</a>
+        </nav>
+    </header>
+    <section class="graph-section">
+        <h2>Visualización del Grafo con Árbol de Expansión Mínima (MST)</h2>
+        <!-- Agrega la imagen del grafo con MST -->
+        <div class="graph-container">
+            <img src="{{ url_for('static', filename='images/grafo_completo_mst.svg') }}" alt="Graph with MST">
+        </div>
+
+        <div class="card">
+            <h2>Árbol de Expansión Mínima (MST)</h2>
+            <div class="purple-box"></div>
+            <p> 
+                {% for borde in mst %}
+                    ({{ borde[0] }}, {{ borde[1] }}, {{ borde[2] }}){% if not loop.last %}, {% endif %}
+                {% endfor %}
+                <br>
+                {% for borde in mst %}
+                    Nodo {{ borde[0] }} con {{ borde[1] }} tiene peso: {{ borde[2] }}<br>
+                {% endfor %}
+                Costo mínimo: {{ costo_minimo }}
+            </p>
+        </div>
+    </section>
+</body>
+</html>
+

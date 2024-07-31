@@ -1,0 +1,8 @@
+def permutations(start, end=[]):
+    if len(start) == 0:
+        print(end)
+    else:
+        for i in range(len(start)):
+            permutations(start[:i] + start[i+1:], end + start[i:i+1])
+            
+permutations(["a", "n", "r"])

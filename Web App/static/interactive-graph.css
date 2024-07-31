@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #333366;
+    cursor: url('images/cursor1.png'), auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    padding: 10px;
+    z-index: 1000;
+    transition: 0.5s ease;
+    justify-content: space-around;
+    background-color: #333366;
+}
+
+.header-title {
+    display: flex;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    text-decoration: none;
+    margin-left: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    align-items: center;
+}
+
+.header-title span {
+    margin-left: 10px;
+}
+
+.header-title img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.header-nav {
+    display: flex;
+}
+
+.header-nav-link {
+    text-decoration: none;
+    margin: 20px;
+    color: #ffffff;
+    font-weight: bold;
+    width: 200px;
+}
+
+.header-nav-link:hover {
+    color: #42deb8;
+    transition: 0.5s ease;
+}
+.content-section {
+    text-align: center;
+    padding: 30px 5%;  /* Ajusta el padding para que las secciones sean más anchas */
+}
+
+.card {
+    max-width: 90%;  /* Ajusta el ancho de la tarjeta según tus preferencias */
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #333;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #333366;
+    color: white;
+}
+
+.card pre {
+    white-space: pre-wrap;  /* Para mantener los saltos de línea */
+    text-align: left;
+    max-width: 100%;  /* Evita que se extienda demasiado hacia la izquierda */
+    overflow-x: auto;  /* Permite desplazamiento horizontal si es necesario */
+}

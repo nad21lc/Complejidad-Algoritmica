@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='graph.css') }}">
+    <title>Graph</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header-title">
+            <a href="#" class="logo">
+                <img src="/static/images/image.png" alt="logo-Optic">
+                <span>Optical Fiber For All</span>
+            </a>
+        </div>
+        <nav class="header-nav">
+            <a class="header-nav-link" href="/Home">Volver a Inicio</a>
+        </nav>
+    </header>
+
+    <section class="graph-section">
+        <h2>Visualización del Grafo Completo con Matplotlib y Networkx</h2>
+        <img src="{{ url_for('static', filename='images/grafo_completo.svg') }}" alt="Graph with MST">
+        
+        <div class="card">
+            <h2>Grafo</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Nodo</th>
+                        <th>Aristas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for node_info in graph_info %}
+                        <tr>
+                            <td>{{ node_info["node"] }}</td>
+                            <td>
+                                {% for edge in node_info["edges"] %}
+                                    {{ edge }}
+                                    {% if not loop.last %}, {% endif %}
+                                {% endfor %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+</html>
